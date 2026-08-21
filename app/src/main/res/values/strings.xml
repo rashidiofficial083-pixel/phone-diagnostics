@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Phone Diagnostics</string>
-    <string name="title_home">ফোন ডায়াগনস্টিকস</string>
-    <string name="storage">স্টোরেজ</string>
-    <string name="ram_usage">র\'যাম ইউসেজ</string>
-    <string name="battery">ব্যাটারি</string>
-    <string name="used_today">আজ খরচ হয়েছে</string>
-    <string name="on_charge">চার্জে ছিল</string>
-    <string name="cache_scanner">ক্যাশ স্ক্যানার</string>
-    <string name="reminders">রিমাইন্ডার</string>
+    <string name="title_home">Phone Diagnostics</string>
+    <string name="storage">Storage</string>
+    <string name="ram_usage">RAM Usage</string>
+    <string name="battery">Battery</string>
+    <string name="used_today">Used Today</string>
+    <string name="on_charge">On Charge</string>
+    <string name="cache_scanner">Cache Scanner</string>
+    <string name="reminders">Reminders</string>
 </resources>
