@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadStorageInfo() {
-        val stat = StatFs(Environment.getDataDirectory().path)
+        val stat = StatFs(Environment.getExternalStorageDirectory().path)
         val totalBytes = stat.totalBytes
         val availableBytes = stat.availableBytes
         val usedBytes = totalBytes - availableBytes
