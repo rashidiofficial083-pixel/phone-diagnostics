@@ -16,8 +16,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="Phone Diagnostics"
         android:theme="@style/Theme.PhoneDiagnostics"
-        android:supportsRtl="true"
-        
+        android:supportsRtl="true">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
