@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PhoneDiagnostics" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#5B9DFF</item>
+        <item name="colorPrimaryDark">#0D1117</item>
+        <item name="colorAccent">#4ADE80</item>
+        <item name="android:windowBackground">#0D1117</item>
+        <item name="android:statusBarColor">#0D1117</item>
+    </style>
+</resources>
