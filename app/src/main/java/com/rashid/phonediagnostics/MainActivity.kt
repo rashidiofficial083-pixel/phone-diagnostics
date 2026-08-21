@@ -91,17 +91,41 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadRamInfo() {
+    var totalKb = 0L
+    var availKb = 0L
+
+    try {
+        java.io.RandomAccessFile("/proc/meminfo", "r").use { reader ->
+            var line: String?
+            while (reader.readLine().also { line = it } != null) {
+                val l = line ?: continue
+                when {
+                    l.startsWith("MemTotal:") -> {
+                        totalKb = l.replace(Regex("[^0-9]"), "").toLong()
+                    }
+                    l.startsWith("MemAvailable:") -> {
+                        availKb = l.replace(Regex("[^0-9]"), "").toLong()
+                    }
+                }
+                if (totalKb > 0 && availKb > 0) break
+            }
+        }
+    } catch (e: Exception) {
+        // ব্যর্থ হলে পুরনো পদ্ধতিতে ফিরে যাওয়া
         val am = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         val memInfo = ActivityManager.MemoryInfo()
         am.getMemoryInfo(memInfo)
+        totalKb = memInfo.totalMem / 1024
+        availKb = memInfo.availMem / 1024
+    }
 
-        val totalGb = memInfo.totalMem / (1024.0 * 1024.0 * 1024.0)
-        val availGb = memInfo.availMem / (1024.0 * 1024.0 * 1024.0)
-        val usedGb = totalGb - availGb
-        val percent = ((usedGb / totalGb) * 100).toInt()
+    val totalGb = totalKb / (1024.0 * 1024.0)
+    val availGb = availKb / (1024.0 * 1024.0)
+    val usedGb = totalGb - availGb
+    val percent = if (totalGb > 0) ((usedGb / totalGb) * 100).toInt() else 0
 
-        ramText.text = String.format("%.1f / %.1f GB", usedGb, totalGb)
-        ramGauge.setData(percent, "$percent%", "ACTIVE", Color.parseColor("#FFA836"))
+    ramText.text = String.format("%.1f / %.1f GB", usedGb, totalGb)
+    ramGauge.setData(percent, "$percent%", "ACTIVE", Color.parseColor("#FFA836"))
     }
 
     private fun loadBatteryInfo() {
