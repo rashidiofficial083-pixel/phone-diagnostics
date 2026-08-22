@@ -27,11 +27,19 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".CacheScannerActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TimeUsageActivity"
+            android:exported="false" />
+
         <service
             android:name=".MonitorService"
             android:foregroundServiceType="specialUse"
             android:exported="false" />
-
+        
     </application>
 
 </manifest>
