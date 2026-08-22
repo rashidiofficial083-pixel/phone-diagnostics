@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var liveMonitorSwitch: Switch
     private lateinit var appUsageContainer: LinearLayout
     private lateinit var cacheScannerRow: LinearLayout
+    private lateinit var timeUsageRow: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         onChargeText = findViewById(R.id.onChargeText)
         liveMonitorSwitch = findViewById(R.id.liveMonitorSwitch)
         appUsageContainer = findViewById(R.id.appUsageContainer)
+        timeUsageRow = findViewById(R.id.timeUsageRow)
         cacheScannerRow = findViewById(R.id.cacheScannerRow)
 
         loadStorageInfo()
@@ -64,7 +66,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         cacheScannerRow.setOnClickListener {
-            // TODO: Cache Scanner screen পরে যোগ করব
+            startActivity(Intent(this, CacheScannerActivity::class.java))
+        }
+
+        timeUsageRow.setOnClickListener {
+            startActivity(Intent(this, TimeUsageActivity::class.java))
         }
     }
 
