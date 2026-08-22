@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0D1117">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="←"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:paddingEnd="12dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time-wise App Usage"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#161B22"
+        android:padding="16dp"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="আজকের কোন সময়ে কী চলছিল দেখুন"
+            android:textColor="#9AA0A6"
+            android:textSize="12sp"
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/startTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Start: --:--"
+                android:textColor="#FFFFFF"
+                android:background="#1F2530"
+                android:padding="12dp"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/endTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="End: --:--"
+                android:textColor="#FFFFFF"
+                android:background="#1F2530"
+                android:padding="12dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/checkButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Check"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:background="#5B8DEF"
+            android:padding="14dp"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/resultsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"/>
+    </ScrollView>
+</LinearLayout>
